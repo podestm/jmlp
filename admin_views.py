@@ -1,9 +1,15 @@
 from flask import Blueprint, render_template
+from flask_login import login_required
 
-# Create the admin blueprint
-admin_bp = Blueprint('admin', __name__,template_folder='templates/admin')
+admin_bp = Blueprint('admin', __name__)
 
-# Admin routes
 @admin_bp.route('/dashboard')
+@login_required
 def dashboard():
-    return render_template('dashboard.html')
+    return render_template('admin/dashboard.html')
+
+@admin_bp.route('/settings')
+@login_required
+def settings():
+    return render_template('admin/settings.html')
+

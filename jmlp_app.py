@@ -4,9 +4,10 @@ from admin_views import admin_bp
 from public_views import public_bp
 from models import User
 from config import db                       # Import db from extensions
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user
 from flask_migrate import Migrate
 from pytz import timezone
+from sqlalchemy.pool import QueuePool
 
 
 app = Flask(__name__)
@@ -21,7 +22,8 @@ SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostnam
 )
 
 app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
-app.config["SQLALCHEMY_POOL_RECYCLE"] = 299
+app.config['SQLALCHEMY_POOL_TIMEOUT'] = 300  # Timeout before a new connection is created
+app.config["SQLALCHEMY_POOL_RECYCLE"] = 280  # Recycle connections after 280 seconds
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config['SECRET_KEY'] = 'jmlpwebsecretkey'
 
@@ -49,7 +51,7 @@ prague_tz = timezone('Europe/Prague')
 #Login manager
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.filter_by(username=user_id).first()
+    return User.query.get(int(user_id))  # Load the user by their primary key (id)
 
 
 
