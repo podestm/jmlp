@@ -27,3 +27,5 @@ class Comment(db.Model):
     posted = db.Column(db.DateTime, default=lambda: datetime.now(pytz.timezone('Europe/Prague')))
     commenter_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     commenter = db.relationship('User', backref='comments')
+
+

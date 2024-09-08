@@ -7,7 +7,6 @@ from config import db                       # Import db from extensions
 from flask_login import LoginManager, current_user
 from flask_migrate import Migrate
 from pytz import timezone
-from sqlalchemy.pool import QueuePool
 
 
 app = Flask(__name__)
@@ -18,7 +17,7 @@ SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostnam
     username="michalpodest",
     password="jmlptest",
     hostname="michalpodest.mysql.pythonanywhere-services.com",
-    databasename="michalpodest$comments",
+    databasename="michalpodest$jmlp_data",
 )
 
 app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
