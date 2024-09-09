@@ -1,0 +1,53 @@
+:root {
+  --primary: #3498db;
+  --secondary: #2ecc71;
+  --success: #27ae60;
+  --info: #3498db;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --light: #ecf0f1;
+  --dark: #2c3e50;
+}
+
+body {
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('/static/images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.card-bg {
+  background-color: rgba(96, 156, 241, 0.5);
+}
+
+.custom-opacity {
+  background-color: rgba(0, 126, 168, 0.3); /* Adjust the last value for opacity (0.3 in this example) */
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.mirror-image {
+  transform: scaleX(-1); /* Flips the image horizontally */
+}
+
+.invisible {
+    display: none;
+}
+
+.w-200 {
+    width: 200px;
+}
+
+@media (max-width: 767px) {
+    .navbar-brand {
+      font-size: 0.8rem; /* Smaller font size for mobile screens */
+      max-width: 70%; /* Limit the maximum width */
+    }
+  }
+  
+  .navbar-toggler {
+    right: 20px; /* Position adjustment if needed */
+  }  
+  

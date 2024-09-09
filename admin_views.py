@@ -3,6 +3,12 @@ from flask_login import login_required
 
 admin_bp = Blueprint('admin', __name__)
 
+
+@admin_bp.route('/home', methods=['GET', 'POST'])
+@login_required
+def home():
+    return render_template('admin/home.html')
+
 @admin_bp.route('/dashboard')
 @login_required
 def dashboard():

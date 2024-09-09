@@ -28,4 +28,31 @@ class Comment(db.Model):
     commenter_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     commenter = db.relationship('User', backref='comments')
 
+class Event(db.Model):
 
+    IdEvent = db.Column(db.Integer, primary_key=True)
+    Event_name = db.Column(db.String(150))
+    Event_date = db.Column(db.Date)
+    Event_time = db.Column(db.Time)
+    Event_place = db.Column(db.String(150))
+    Event_final = db.Column(db.Integer)
+    Event_season = db.Column(db.String(10))
+    Results_file_name = db.Column(db.String(100))
+    Results_file_ext = db.Column(db.String(10))
+    Results_file_url = db.Column(db.String(100))
+    Propositions_file_name = db.Column(db.String(100))
+    Propositions_file_ext = db.Column(db.String(10))
+    Propositions_file_url = db.Column(db.String(100))
+    Event_organizator = db.Column(db.String(100))
+    Event_badge = db.Column(db.String(100))
+    Event_opened = db.Column(db.Integer)
+
+class Note(db.Model):
+    __tablename__ = "notes"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    data = db.Column(db.String(10000))
+    date = db.Column(db.DateTime, default=lambda: datetime.now(pytz.timezone('Europe/Prague')))
+    Note_type = db.Column(db.String(45))
+    Note_image_url = db.Column(db.String(255))

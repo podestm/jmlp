@@ -23,6 +23,9 @@ SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostnam
 app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_POOL_TIMEOUT'] = 300  # Timeout before a new connection is created
 app.config["SQLALCHEMY_POOL_RECYCLE"] = 280  # Recycle connections after 280 seconds
+app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+    "pool_pre_ping": True  # Ensures the connection is valid before using it
+}
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config['SECRET_KEY'] = 'jmlpwebsecretkey'
 
