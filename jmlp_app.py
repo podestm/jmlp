@@ -13,17 +13,6 @@ app = Flask(__name__)
 app.config["DEBUG"] = True
 
 
-@app.route('/git_update', methods=['POST'])
-def git_update():
-    repo = git.Repo('./orbe')
-    origin = repo.remotes.origin
-    repo.create_head('main',
-                     origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
-    origin.pull()
-    return '', 200
-
-
-
 SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
     username="michalpodest",
     password="jmlptest",
