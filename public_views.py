@@ -5,13 +5,13 @@ from models import Note, Event
 public_bp = Blueprint('public', __name__, template_folder='templates/public')
 
 # Public routes
-@public_bp.route('/')
+@public_bp.route('/blank')
 def index():
     return render_template('index.html')
 
 
-@public_bp.route('/about',  methods=['GET','POST'])
-def about():
+@public_bp.route('/',  methods=['GET','POST'])
+def home():
 
     events = Event.query.order_by(Event.Event_date).all()
 
@@ -44,4 +44,4 @@ def about():
             for post in posts
     ]
 
-    return render_template('public/about.html', event_list=events, blog_posts=blog_posts, cards=cards)
+    return render_template('public/home.html', event_list=events, blog_posts=blog_posts, cards=cards)
