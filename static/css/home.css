@@ -1,0 +1,218 @@
+body {
+    background-color: #f8f9fa;
+    font-family: "Quicksand", sans-serif;
+}
+
+/* Header container styling with responsive design */
+.header-container {
+    background-color: #add8e6; /* Light blue background */
+    height: 220px; /* Desktop height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    border-radius: 15px; /* Rounded corners */
+}
+
+/* Images styling */
+.header-container img {
+    width: 237px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px; /* Rounded corners for images */
+}
+
+/* Consistent styling for both headers */
+h4 {
+    font-size: 24px; /* Same size as "Nejbližší Akce" */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Responsive heading */
+.header-container h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #003366; /* Dark blue for contrast */
+    margin: 0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* Custom Navbar Styling */
+.navbar-brand {
+    font-size: 1.5rem; /* Larger brand text */
+    font-weight: bold;
+    color: #003366; /* Custom brand color */
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem; /* Larger menu items */
+    margin-left: 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0056b3; /* Hover color */
+}
+
+
+/* Button container for navbar */
+.btn-group-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.btn-group-container .btn {
+    margin-right: 15px;
+    flex: 1;
+    text-align: center;
+    border-radius: 15px; /* Rounded corners for buttons */
+}
+
+.btn-group-container .btn:last-child {
+    margin-right: 0; /* Remove margin from the last button */
+}
+
+/* White background for the blog post container */
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    height: 380px;                              /* Set desired height for the blog posts container */
+    overflow-y: auto;                           /* Enable vertical scrolling */
+    background-color: #ffffff;                  /* White background for the blog posts */
+    padding: 15px;                              /* Add padding for better spacing inside */
+    border-radius: 15px;                        /* Maintain rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow */
+}
+
+/* Keep "Nejbližší Akce" card background color as it was before */
+.highlight-box {
+    background-color: #f0ff86; /* Original background color */
+    padding: 20px;
+    height: 100%;
+    border-radius: 15px; /* Rounded corners for consistency */
+}
+
+.card {
+    height: 150px; /* Set a fixed height for each card */
+    border-radius: 15px; /* Keep the rounded corners */
+}
+
+.card-body {
+    flex-grow: 1;
+    border-radius: 15px; /* Rounded corners for card body */
+}
+
+/* Align content to the right side */
+.highlight-box .event-details {
+    text-align: right; /* Align the event details to the right */
+}
+
+/* Square-shaped card */
+/* Square-shaped card with specific dimensions */
+.square-card {
+    width: 220px;           /* Fixed width */
+    height: 200px;          /* Fixed height */
+    border-radius: 15px;    /* Rounded corners for consistency */
+    overflow: hidden;       /* Hide overflow of image */
+    margin-bottom: 15px;
+}
+
+/* Images inside the square cards */
+.square-card img {
+    padding: 0;           /* Padding around the image */
+    object-fit: cover;      /* Ensure the image covers the card without distortion */
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;    /* Maintain rounded corners for the image */
+}
+
+
+/* Scrollable container for images */
+.scroll-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px 0;
+    scroll-snap-type: x mandatory; /* Snapping effect for a smooth scroll */
+}
+
+/* Carousel container */
+.carousel-container {
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Slick Carousel arrows */
+.slick-prev, .slick-next {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: white;
+    width: 40px;
+    height: 40px;
+}
+
+.slick-prev:hover, .slick-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Mirror image effect */
+.mirror-image {
+    transform: scaleX(-1); /* Flips the image horizontally */
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 1230px) {
+    .header-container {
+        flex-direction: column; /* Stack heading and images vertically */
+        height: auto;
+        text-align: center;
+    }
+
+    .header-container h1 {
+        font-size: 28px; /* Smaller font size for mobile */
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+
+    .header-images {
+        display: flex;
+        justify-content: center;
+        gap: 10px; /* Space between the two images */
+        width: 100%;
+    }
+
+    .header-container img {
+        width: 45%; /* Scale images to fit within the row */
+        max-width: 150px; /* Optional maximum size */
+        height: auto;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .btn-group-container {
+        flex-direction: column;
+    }
+
+    .btn-group-container .btn {
+        margin-bottom: 10px; /* Add margin between buttons */
+    }
+
+    .btn-group-container .btn:last-child {
+        margin-bottom: 0; /* No margin for the last button */
+        margin-right: 15px;
+    }
+
+    .highlight-box h3 {
+        font-size: 20px;
+    }
+
+    .card-body {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+}
