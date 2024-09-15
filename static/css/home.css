@@ -30,6 +30,13 @@ h4 {
     margin-bottom: 20px;
 }
 
+.eventName h2 {
+    font-size: 28px; /* Same size as "Nejbližší Akce" */
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
 /* Responsive heading */
 .header-container h1 {
     flex-grow: 1;
