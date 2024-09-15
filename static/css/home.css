@@ -81,6 +81,7 @@ h4 {
     /* Make text black and bold */
     color: black;
     font-weight: bold;
+    font-size: 18px;
 }
 
 .btn-group-container .btn:last-child {
