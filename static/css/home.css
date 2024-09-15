@@ -63,7 +63,7 @@ h4 {
 .btn-group-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .btn-group-container .btn {
