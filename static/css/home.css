@@ -72,6 +72,15 @@ h4 {
     height: 50px;
     text-align: center;
     border-radius: 15px; /* Rounded corners for buttons */
+    
+    /* Center the text vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Make text black and bold */
+    color: black;
+    font-weight: bold;
 }
 
 .btn-group-container .btn:last-child {
