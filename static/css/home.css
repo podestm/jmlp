@@ -30,7 +30,7 @@ h4 {
     margin-bottom: 20px;
 }
 
-.eventName h2 {
+.eventName {
     font-size: 28px; /* Same size as "Nejbližší Akce" */
     font-weight: bold;
     margin-bottom: 5px;
