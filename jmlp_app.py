@@ -37,7 +37,6 @@ migrate = Migrate(app, db)
 
 
 
-
 # Initialize the LoginManager
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -54,7 +53,6 @@ prague_tz = timezone('Europe/Prague')
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))  # Load the user by their primary key (id)
-
 
 
 
