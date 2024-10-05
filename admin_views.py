@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-from flask_login import login_required, current_user
+from flask_login import login_required
 from models import Note
 
 admin_bp = Blueprint('admin', __name__)
@@ -36,6 +36,5 @@ def posts():
                    } 
             for post in posts
     ]
-    
-    return render_template('admin/posts.html', user=current_user, blog_posts=blog_posts)
+    return render_template('admin/posts.html', blog_posts=blog_posts)
 
