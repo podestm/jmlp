@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-6">
                     <form method="post" action="">
-                        <a class="btn btn-secondary w-100" href="" type="submit">Nové oznámení</a>
+                        <a class="btn btn-secondary w-100" href="{{ url_for('admin.add_post') }}" type="submit">Nové oznámení</a>
                     </form>
                 </div>
             </div>
@@ -21,7 +21,22 @@
     <div class="container mt-4">
         <div class="row g-4">
             <div class="col">
-                
+                {% for card in blog_posts %}
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ card.note_title }}</h5>
+                        <p class="card-text">{{ card.note_data|safe }}</p>
+                        <form method="post">
+                            <a href="/admin/post-edit/{{ card.note_id }}" class="btn btn-primary">Upravit</a>
+                            <a href="#" class="btn btn-primary">Archivovat</a>
+                            <a href="/admin/delete-post/{{ card.note_id }}" class="btn btn-primary">Smazat</a>
+                        </form>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Zveřejněno {{ card.note_date }}
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

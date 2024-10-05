@@ -16,7 +16,17 @@ def home():
 @admin_bp.route('/settings', methods=['GET', 'POST'])
 @login_required
 def settings():
-    return render_template('admin/settings.html')
+    posts = Note.query.all()
+    blog_posts = [{'data': post,
+                   'note_title': post.name,
+                   'note_id': post.id,
+                   'note_data': post.data,
+                   'note_date': post.date,
+                   } 
+            for post in posts
+    ]
+    
+    return render_template('admin/settings.html', user=current_user, blog_posts=blog_posts)
 
 
 ## Post management pages
