@@ -1,28 +1,25 @@
 {% extends "admin/base_admin.html" %}
- 
+
 {% block content %}
 
 <h1 align="center">Přidat oznámení na úvodní stránku</h1>
 <div class="card">
   <div class="card-body">
-  
-
-    
+    {% if post_details.id %}    
+    <form action="/admin/post-edit/{{ post_details.id }}" method ="POST" enctype ="multipart/form-data">
+    {% else %}
     <form action="/admin/post-add" method="POST" enctype="multipart/form-data">
-    
+    {% endif %}
       <div class="col-md-12">
         <label for="post_title" class="form-label">Titulek</label>
         <input type="text" id="post_title" name="post_title" class="form-control mb-3" value="{{ post_details.name }}"required>
       </div>
       <div class="col-md-12">
-        <!--textarea name="post" id="post" class="form-control" value="{{ post_details.data }}"></textarea -->
-        <textarea name="editor1" id="editor1" rows="10" cols="80"></textarea>
-        
+        <!-- <textarea name="post" id="post" class="form-control" value="{{ post_details.data }}"></textarea> -->
+        <textarea name="editor1" id="editor1" class="form-control" rows="6" cols="80" value="{{ post_details.data }}" ></textarea>
         <script>
-            CKEDITOR.replace('editor1');
+          CKEDITOR.replace('editor1');
         </script>
-        
-
       </div>
       <br>
       <div class="col-md-12" align="center">
