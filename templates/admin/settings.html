@@ -1,34 +1,29 @@
 {% extends "admin/base_admin.html" %}
  
 {% block content %}
-
-<h1 align="center">Přidat oznámení na úvodní stránku</h1>
-<div class="card">
-  <div class="card-body">
-  
-
-    
-    <form action="/admin/post-add" method="POST" enctype="multipart/form-data">
-    
-      <div class="col-md-12">
-        <label for="post_title" class="form-label">Titulek</label>
-        <input type="text" id="post_title" name="post_title" class="form-control mb-3" value="{{ post_details.name }}"required>
-      </div>
-      <div class="col-md-12">
-        <!--textarea name="post" id="post" class="form-control" value="{{ post_details.data }}"></textarea -->
-        <textarea name="editor1" id="editor1" rows="10" cols="80"></textarea>
-        
-        <script>
-            CKEDITOR.replace('editor1');
-        </script>
-        
-
-      </div>
-      <br>
-      <div class="col-md-12" align="center">
-        <button type="submit" class="btn btn-primary">Hotovo</button>
-      </div>
-    </form>
-  </div>
+<div class="container-fluid">
+    <div class="row mb-3">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="row">
+                <div class="col-6">
+                    <form method="post" action="">
+                        <button class="btn btn-secondary w-100" type="submit">Něco jinýho</button>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <form method="post" action="">
+                        <a class="btn btn-secondary w-100" href="" type="submit">Nové oznámení</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row g-4">
+            <div class="col">
+                
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
