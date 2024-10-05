@@ -47,7 +47,7 @@ class Event(db.Model):
     Event_badge = db.Column(db.String(100))
     Event_opened = db.Column(db.Integer)
 
-class Note(db.Model):
+class Notes(db.Model):
     __tablename__ = "notes"
 
     id = db.Column(db.Integer, primary_key=True)

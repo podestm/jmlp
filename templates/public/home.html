@@ -16,6 +16,23 @@
 
     <h2></h2>
 </div>
+<div class="container mt-3 invisible">
+        <div class="row" id="notes">
+            {% for post in blog_posts %}
+                <div class="col-md-12 mb-3">
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.note_title }}</h5>
+                            <p class="card-text">{{ post.note_data }}</p>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Zveřejněno {{ post.note_date }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+</div>
 <div class="container-md  text-center">
     <br>
     <h2 class="mb-4">Vypsané Soutěže</h2>
