@@ -21,7 +21,7 @@ def settings():
 @admin_bp.route('/posts')
 @login_required
 def posts():
-    return render_template('admin/posts.html')
+    return render_template('admin/overview_posts.html')
 
 
 # Post adding page
