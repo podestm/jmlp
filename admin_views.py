@@ -2,7 +2,7 @@ import os
 from config import db 
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_required, current_user
-from models import Note
+from models import Notes
 
 admin_bp = Blueprint('admin', __name__)
 
@@ -16,7 +16,7 @@ def home():
 @admin_bp.route('/settings', methods=['GET', 'POST'])
 @login_required
 def settings():
-    posts = Note.query.all()
+    posts = Notes.query.all()
     blog_posts = [{'data': post,
                    'note_title': post.name,
                    'note_id': post.id,
@@ -48,7 +48,7 @@ def add_post():
         if len(note) < 1:
             flash('Note is too short!', category='error') 
         else:
-            new_note = Note(data=note, user_id=current_user.id, name=title) 
+            new_note = Notes(data=note, user_id=current_user.id, name=title) 
             db.session.add(new_note)
             db.session.commit()
             return redirect(url_for('admin.posts'))
