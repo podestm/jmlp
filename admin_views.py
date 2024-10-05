@@ -16,7 +16,7 @@ def home():
 @admin_bp.route('/settings', methods=['GET', 'POST'])
 @login_required
 def settings():
-    posts = Notes.query.all()
+    posts = db.Notes.query.all()
     blog_posts = [{'data': post,
                    'note_title': post.name,
                    'note_id': post.id,
