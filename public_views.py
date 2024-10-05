@@ -31,17 +31,4 @@ def home():
         for event in events
     ]
 
-    posts = Note.query.all()
-    blog_posts = [{'data': post,
-                   'note_title': post.name,
-                   'note_id': post.id,
-                   'note_data': post.data,
-                   'note_date': post.date,
-                   'note_type': post.Note_type,
-                   'note_image': post.Note_image_url != None,
-                   'image_url': post.Note_image_url
-                   }
-            for post in posts
-    ]
-
-    return render_template('public/home.html', event_list=events, blog_posts=blog_posts, cards=cards)
+    return render_template('public/home.html', event_list=events, cards=cards)
