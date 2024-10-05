@@ -18,10 +18,12 @@ def home():
 def settings():
         return render_template('admin/settings.html')
 
-@admin_bp.route('/posts')
+
+
+@admin_bp.route('/blog-posts', methods=['GET', 'POST'])
 @login_required
-def posts():
-    return render_template('admin/overview_posts.html')
+def settings():
+        return render_template('admin/blog_posts.html')
 
 
 # Post adding page
