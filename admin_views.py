@@ -20,9 +20,9 @@ def settings():
 
 
 
-@admin_bp.route('/blog-posts', methods=['GET', 'POST'])
+@admin_bp.route('/blog', methods=['GET', 'POST'])
 @login_required
-def settings():
+def blog():
         return render_template('admin/blog.html')
 
 
