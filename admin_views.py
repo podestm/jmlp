@@ -20,10 +20,19 @@ def settings():
 
 
 
-@admin_bp.route('/blog', methods=['GET', 'POST'])
+@admin_bp.route('/posts', methods=['GET', 'POST'])
 @login_required
-def blog():
-        return render_template('admin/blog.html')
+def posts():
+    posts = Notes.query.all()
+    blog_posts = [{'data': post,
+                   'note_title': post.name,
+                   'note_id': post.id,
+                   'note_data': post.data,
+                   'note_date': post.date,
+                   } 
+            for post in posts
+    ]
+    return render_template('admin/posts.html', user=current_user, blog_posts=blog_posts)
 
 
 # Post adding page
