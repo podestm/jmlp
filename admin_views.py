@@ -22,9 +22,7 @@ def settings():
                    'note_id': post.id,
                    'note_data': post.data,
                    'note_date': post.date,
-                   'note_type': post.Note_type,
-                   'note_image': post.Note_image_url != None,
-                   'image_url': post.Note_image_url
+                   'note_type': post.Note_type
                    }
             for post in posts
     ]
