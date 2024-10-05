@@ -49,10 +49,7 @@ def settings():
 
         return render_template('public/home.html', event_list=events, blog_posts=blog_posts, cards=cards)
 
-
-
-## Post management pages
-@admin_bp.route('/posts', methods=['GET', 'POST'])
+@admin_bp.route('/posts')
 @login_required
 def posts():
     return render_template('admin/posts.html')
