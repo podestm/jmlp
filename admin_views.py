@@ -47,7 +47,7 @@ def settings():
                 for post in posts
         ]
 
-        return render_template('public/home.html', event_list=events, blog_posts=blog_posts, cards=cards)
+        return render_template('public/settings.html', event_list=events, blog_posts=blog_posts, cards=cards)
 
 
 
