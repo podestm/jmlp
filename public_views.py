@@ -21,7 +21,7 @@ def index():
     ]
     
     
-    return render_template('index.html', blog_posts=blog_posts)
+    return render_template('public/index.html', blog_posts=blog_posts)
 
 
 @public_bp.route('/events', methods=['GET','POST'])
@@ -43,7 +43,7 @@ def events():
               }
         for event in events
     ]
-    return render_template('events.html', event_list=events, cards=cards)
+    return render_template('public/events.html', event_list=events, cards=cards)
 
 
 @public_bp.route('/blank',  methods=['GET','POST'])
