@@ -57,13 +57,13 @@
                     <h3>Aktuality</h3>
 
                     {% for post in blog_posts %}
-                    <div class="card mb-3">
+                    <div class="card-body mb-3">
 
-                        <div class="card-body">
+                        
                             <h5 class="card-title">{{ post.note_title }}</h5>
                             <p class="card-text">{{ post.note_data }}</p>
                             <p class="card-text"><small class="text-muted">{{ post.note_date }}</small></p>
-                        </div>
+                        
                         
                     </div>
                     {% endfor %}
