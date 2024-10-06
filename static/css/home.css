@@ -140,7 +140,6 @@ h4 {
 .card {
     min-height: 150px; /* Ensures a minimum height for cards */
     padding: 5px; /* Adds padding inside the card */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
     margin-bottom: 5px; /* Space between cards */
 }
 
