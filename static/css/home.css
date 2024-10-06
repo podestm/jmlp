@@ -1,16 +1,20 @@
 body {
     background-color: #f8f9fa;
     font-family: "Quicksand", sans-serif;
+    height: 100%;
+    margin: 0;
 }
 
-.footer {
+footer {
     text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+.content {
+    flex: 1;
+    /* Any additional styling for your content */
 }
 
 /* Header container styling with responsive design */
