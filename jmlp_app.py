@@ -4,7 +4,6 @@ from auth_views import auth_bp              # This should be from auth_views, no
 from admin_views import admin_bp
 from public_views import public_bp
 from models import User
-from config import db                       # Import db from extensions
 from flask_login import LoginManager, current_user
 from flask_migrate import Migrate
 from pytz import timezone
