@@ -139,17 +139,12 @@ h4 {
 
 .card {
     min-height: 150px; /* Ensures a minimum height for cards */
-    padding: 20px; /* Adds padding inside the card */
+    padding: 5px; /* Adds padding inside the card */
     border-radius: 15px; /* Rounded corners */
     border: 1px solid #ccc; /* Optional border for card */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-    margin-bottom: 20px; /* Space between cards */
+    margin-bottom: 5px; /* Space between cards */
 }
-
-.card p {
-    margin: 0; /* Ensure no extra margins from paragraph tags */
-}
-
 
 .card-body {
     display: flex;
