@@ -24,6 +24,11 @@ def index():
     return render_template('index.html', blog_posts=blog_posts)
 
 
+@public_bp.route('/events')
+def events():
+    return render_template('events.html')
+
+
 @public_bp.route('/blank',  methods=['GET','POST'])
 def home():
 
