@@ -26,7 +26,24 @@ def index():
 
 @public_bp.route('/events')
 def events():
-    return render_template('events.html')
+    events = Event.query.order_by(Event.Event_date).all()
+
+    cards = [{'data': event,
+              'event_id': event.IdEvent,
+              'show_button': event.Event_opened == 1,
+              'event_name': event.Event_name,
+              'event_date': event.Event_date.strftime("%d.%m.%Y"),
+              'event_organizator': event.Event_organizator,
+              'event_badge': event.Event_badge,
+              'event_place': event.Event_place,
+              'event_closed': event.Event_opened == 0,
+              'event_opened': event.Event_opened == 1,
+              'propositions_file': event.Propositions_file_name,
+              'results_file': event.Results_file_name
+              }
+        for event in events
+    ]
+    return render_template('events.html', event_list=events, cards=cards)
 
 
 @public_bp.route('/blank',  methods=['GET','POST'])
