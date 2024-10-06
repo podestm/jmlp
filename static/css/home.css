@@ -138,8 +138,9 @@ h4 {
 }
 
 .card {
-    height: 150px; /* Set a fixed height for each card */
+    height: 250px; /* Set a fixed height for each card */
     border-radius: 15px; /* Keep the rounded corners */
+    overflow: hidden;
 }
 
 .card-body {
