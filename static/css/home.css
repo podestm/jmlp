@@ -3,6 +3,16 @@ body {
     font-family: "Quicksand", sans-serif;
 }
 
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
 /* Header container styling with responsive design */
 .header-container {
     background-color: #add8e6; /* Light blue background */
