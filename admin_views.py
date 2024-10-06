@@ -84,3 +84,17 @@ def edit_post(post_id):
             
             return redirect(url_for('admin.posts'))
     return render_template('admin/post_add.html', user=current_user, post_details=post_details)
+
+
+# Post delete function
+@admin_bp.route('/delete-post/<int:post_id>', methods=['GET','POST'])
+@login_required
+def delete_post(post_id):  
+    note = Notes.query.get(post_id)
+    if note:
+        db.session.delete(note)
+        db.session.commit()
+
+    return redirect(url_for('admin.posts'))
+
+### EVENT MANAGEMENT ###
