@@ -49,7 +49,7 @@ def add_post():
         if len(note) < 1:
             flash('Note is too short!', category='error') 
         else:
-            new_note = Notes(data=note, user_id=current_user.id, name=title) 
+            new_note = Notes(data=note, name=title) 
             db.session.add(new_note)
             db.session.commit()
             return redirect(url_for('admin.posts'))
