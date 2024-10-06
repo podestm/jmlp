@@ -56,3 +56,28 @@ class Notes(db.Model):
     date = db.Column(db.DateTime, default=lambda: datetime.now(pytz.timezone('Europe/Prague')))
     Note_type = db.Column(db.String(45))
     Note_image_url = db.Column(db.String(255))
+    
+class Racer(db.Model):
+    __tablename__ = "racer"
+    
+    IdRacer = db.Column(db.Integer, primary_key=True)
+    Racer_firstName = db.Column(db.String(100))
+    Racer_lastName = db.Column(db.String(100))
+    Racer_birthYear = db.Column(db.String(100))
+    Racer_gender = db.Column(db.Enum('Muž', 'Žena'))
+    Racer_email = db.Column(db.String(100))
+    Racer_teamName = db.Column(db.String(100), db.ForeignKey('team.Team_name'))
+    
+class Team(db.Model):
+    __tablename__ = "team"
+    
+    IdTeam = db.Column(db.Integer, primary_key=True)
+    Team_name = db.Column(db.String(100))
+    Team_contact = db.Column(db.String(100))
+    
+class EventHasRacer(db.Model):
+    __tablename__ = "eventHasRacer"
+    
+    EventId = db.Column(db.Integer, db.ForeignKey('event.IdEvent'), primary_key=True)
+    RacerId = db.Column(db.Integer, db.ForeignKey('racer.IdRacer'), primary_key=True)
+    RegistrationTimestamp = db.Column(db.DateTime, default=datetime.datetime.now, nullable=False)
