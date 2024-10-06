@@ -23,35 +23,38 @@
 
             <!-- Right side: Event cards -->
             <div class="col-10">
-                <h2 class="mb-4">Vypsané Soutěže</h2>
-                <div class="container mt-3">
-                    <div class="row">
-                    {% for card in cards %}
-                        <div class="col-md-4 mb-3">
-                            <div class="card shadow-lg d-flex card-bg" style="height: 250px;">
-                                <a href="{{ url_for('views.register', event_id=card.event_id) }}"class="text-decoration-none text-reset">
-                                <div class="card-body d-flex flex-column">
-                                    <h3 class="card-title event-name">{{ card.event_place }}</h3>
-                                    <br>
-                                    <h6 class="card-title">{{ card.event_date }}</h6>
-                                    <br>
-                                    <h5 class="card-title">{{ card.event_organizator }}</h5>
-                                    <div class="flex-grow-1">
-                                    </div>
-                                </div>
-                                <div class="card-footer invisible" style="position: absolute; bottom: 0; width: 100%;">
-                                    {% if card.event_closed %}
-                                    <span class="badge rounded-pill bg-danger text-dark">Přihlášky Zavřené</span>
-                                    {% else %}
-                                    <span class="badge rounded-pill bg-success text-dark">Přihlášky Otevřené</span>
-                                    {% endif %}
-                                </div>
-                                </a>
-                            </div>
-                        </div>   
-                    {% endfor %}
+                    <div class="card-body mb-3 d-flex justify-content-between">
+                        <div>
+                            <h5 class="card-title">Přespolní běh Kraví Hora - Brno</h5>
+                            <p class="card-text">20.2.2025</p>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-primary">Registrace</a>
+                            <a href="#" class="btn btn-secondary">Propozice</a>
+                            <a href="#" class="btn btn-success">Výsledky</a>
+                        </div>
                     </div>
-                </div>
+                    <div class="card-body mb-3 d-flex justify-content-between">
+                        <div>
+                            <h5 class="card-title">Obří slalom - Předklášteří</h5>
+                            <p class="card-text">20.2.2025</p>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-primary">Registrace</a>
+                            <a href="#" class="btn btn-secondary">Propozice</a>
+                            <a href="#" class="btn btn-success">Výsledky</a>
+                        </div>
+                    </div>
+                    <div class="card-body mb-3 d-flex justify-content-between">
+                        <div>
+                            <h5 class="card-title">Finále JMLP 2024 - Olešnice</h5>
+                            <p class="card-text">20.2.2025</p>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-primary">Registrace</a>
+                            <a href="#" class="btn btn-secondary">Propozice</a>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

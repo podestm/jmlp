@@ -1,9 +1,9 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from auth_views import auth_bp              # This should be from auth_views, not auth
 from admin_views import admin_bp
 from public_views import public_bp
 from models import User
+from config import db
 from flask_login import LoginManager, current_user
 from flask_migrate import Migrate
 from pytz import timezone
@@ -29,8 +29,6 @@ app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config['SECRET_KEY'] = 'jmlpwebsecretkey'
 
-# Initialize SQLAlchemy instance
-db = SQLAlchemy()
 
 # Initialize the configs
 db.init_app(app)  # Initialize the db instance with the app
