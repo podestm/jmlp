@@ -78,6 +78,7 @@ class Team(db.Model):
 class EventHasRacer(db.Model):
     __tablename__ = "eventHasRacer"
     
+    RegistrationId = db.Column(db.Integer, primary_key=True)
     EventId = db.Column(db.Integer, db.ForeignKey('event.IdEvent'), primary_key=True)
     RacerId = db.Column(db.Integer, db.ForeignKey('racer.IdRacer'), primary_key=True)
-    RegistrationTimestamp = db.Column(db.DateTime, default=datetime.datetime.now, nullable=False)
+    RegistrationTimestamp = db.Column(db.DateTime, default=datetime.now, nullable=False)
