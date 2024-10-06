@@ -7,7 +7,21 @@ public_bp = Blueprint('public', __name__, template_folder='templates/public')
 # Public routes
 @public_bp.route('/')
 def index():
-    return render_template('index.html')
+    posts = Notes.query.all()
+    blog_posts = [{'data': post,
+                   'note_title': post.name,
+                   'note_id': post.id,
+                   'note_data': post.data,
+                   'note_date': post.date,
+                   'note_type': post.Note_type,
+                   'note_image': post.Note_image_url != None,
+                   'image_url': post.Note_image_url
+                   }
+            for post in posts
+    ]
+    
+    
+    return render_template('index.html', blog_posts=blog_posts)
 
 
 @public_bp.route('/blank',  methods=['GET','POST'])
