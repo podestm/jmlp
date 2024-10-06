@@ -140,8 +140,6 @@ h4 {
 .card {
     min-height: 150px; /* Ensures a minimum height for cards */
     padding: 5px; /* Adds padding inside the card */
-    border-radius: 15px; /* Rounded corners */
-    border: 1px solid #ccc; /* Optional border for card */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
     margin-bottom: 5px; /* Space between cards */
 }
@@ -151,6 +149,8 @@ h4 {
     flex-direction: column; /* Allows vertical stacking of elements */
     flex-grow: 1;
     border-radius: 15px; /* Rounded corners for card body */
+    border: 1px solid #ccc; /* Optional border for card */
+    border-radius: 15px; /* Rounded corners */
 }
 
 /* Align content to the right side */
