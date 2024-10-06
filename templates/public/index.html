@@ -55,21 +55,6 @@
             <div class="col-md-6">
                 <div class="blog-container">
                     <h3>Aktuality</h3>
-
-                    
-                    {% for post in blog_posts %}
-                    <div class="mb-3">
-
-                        <div class="card-body">
-                            <h5 class="card-title">{{ post.note_title }}</h5>
-                            <p class="card-text">{{ post.note_data }}</p>
-                            <p class="card-text"><small class="text-muted">{{ post.note_date }}</small></p>
-                        </div>
-                        
-                    </div>
-                {% endfor %}
-
-
                     <div class="card mb-3">
                         <div class="card-body">
                             <h5 class="card-title">Card title 1</h5>
@@ -85,6 +70,22 @@
                         </div>
                     </div>
                     <!-- Add more cards as needed -->
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 3</h5>
+                            <p class="card-text">Another post text goes here.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 5 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 4</h5>
+                            <p class="card-text">Another post text goes here.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 7 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Section for square image cards -->
             <div class="container mt-4">
