@@ -24,7 +24,7 @@ def index():
     return render_template('index.html', blog_posts=blog_posts)
 
 
-@public_bp.route('/events')
+@public_bp.route('/events', methods=['GET','POST'])
 def events():
     events = Event.query.order_by(Event.Event_date).all()
 
