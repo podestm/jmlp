@@ -1,8 +1,5 @@
 from flask import Blueprint, render_template, request
-from flask_login import current_user
-from sqlalchemy import or_
-import db
-from models import Notes, Event, Racer, Team, EventHasRacer
+from models import Notes, Event
 
 # Create the public blueprint
 public_bp = Blueprint('public', __name__, template_folder='templates/public')
